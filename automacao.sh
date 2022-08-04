@@ -30,20 +30,33 @@ chmod 777 /publico
 
 echo "Criando usuários do grupo administrativo..."
 
-useradd carlos -m -s /bin/bash -p $(openssl passwd -crypt 123) -G GRP_ADM
-useradd mario -m -s /bin/bash -p $(openssl passwd -crypt 123) -G GRP_ADM
-useradd joao -m -s /bin/bash -p $(openssl passwd -crypt 123) -G GRP_ADM
+useradd carlos -m -s /bin/bash -p 123 -G GRP_ADM
+useradd mario -m -s /bin/bash -p 123 -G GRP_ADM
+useradd joao -m -s /bin/bash -p 123 -G GRP_ADM
 
 echo "Criando usuários do grupo vendas"
 
-useradd debora -m -s /bin/bash -p $(openssl passwd -crypt 123) -G GRP_VEN
-useradd sebastiao -m -s /bin/bash -p $(openssl passwd -crypt 123) -G GRP_VEN
-useradd roberto -m -s /bin/bash -p $(openssl passwd -crypt 123) -G GRP_VEN
+useradd debora -m -s /bin/bash -p 123 -G GRP_VEN
+useradd sebastiao -m -s /bin/bash -p 123 -G GRP_VEN
+useradd roberto -m -s /bin/bash -p 123 -G GRP_VEN
 
 echo "Criando usuários do grupo segurança"
 
-useradd josefina -m -s /bin/bash -p $(openssl passwd -crypt 123) -G GRP_SEC
-useradd amanda -m -s /bin/bash -p $(openssl passwd -crypt 123) -G GRP_SEC
-useradd rogerio -m -s /bin/bash -p $(openssl passwd -crypt 123) -G GRP_SEC
+useradd josefina -m -s /bin/bash -p 123 -G GRP_SEC
+useradd amanda -m -s /bin/bash -p 123 -G GRP_SEC
+useradd rogerio -m -s /bin/bash -p 123 -G GRP_SEC
+
+echo "Forçando alterações de senha dos usuários"
+
+passwd -e carlos
+passwd -e mario
+passwd -e joao
+passwd -e debora
+passwd -e sebastiao
+passwd -e roberto
+passwd -e josefina
+passwd -e amanda
+passwd -e rogerio
+
 
 echo "Fim..."
