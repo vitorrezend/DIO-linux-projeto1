@@ -48,12 +48,20 @@ useradd rogerio -m -s /bin/bash -p 123 -G GRP_SEC
 
 echo "Forçando alterações de senha dos usuários"
 
+echo "Forçando alterações de senha nos usuários com acesso a pasta /adm"
+
 passwd -e carlos
 passwd -e mario
 passwd -e joao
+
+echo "Forçando alterações de senha nos usuários com acesso a pasta /ven"
+
 passwd -e debora
 passwd -e sebastiao
 passwd -e roberto
+
+echo "Forçando alterações de senha nos usuários com acesso a pasta /sec"
+
 passwd -e josefina
 passwd -e amanda
 passwd -e rogerio
